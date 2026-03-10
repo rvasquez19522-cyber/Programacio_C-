@@ -1,22 +1,23 @@
 #include <iostream>
-#include <math.h>
 #include <string>
-#include <vector>
-#include <algorithm>
-using namespace std;
+#include <algorithm> // Para std::reverse
 
-string invertir(string s){
-    string a;
-    for (int i=s. length(); i>0; i--){
-        a +=s[i];
-    }
-    return a;
+// Función que invierte cualquier cadena, incluyendo espacios
+std::string invertir(const std::string& cadena) {
+    std::string invertida = cadena;
+    std::reverse(invertida.begin(), invertida.end());
+    return invertida;
 }
-int main(){
-    string s,r;
-    cout<<"Introdueixi la paraula a girar: "<<endl;
-    cin>> s;
-    r = invertir (s);
-    cout<<"La cadena "<<s<<" a l'inrevés és "<<r<<endl;
+
+int main() {
+    std::string texto;
+
+    std::cout << "Introdueixi la paraula a girar: ";
+    std::getline(std::cin, texto); // Leer toda la línea, incluyendo espacios
+
+    std::string resultado = invertir(texto);
+
+    std::cout << "La cadena \"" << texto << "\" a l'inrevés és: " << resultado << std::endl;
+
     return 0;
 }
